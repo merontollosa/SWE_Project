@@ -50,6 +50,7 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 			
 			@Override
 			public String encode(CharSequence charSequence) {
+				System.out.println("Security");
 			      return charSequence.toString();
 			}
 		};

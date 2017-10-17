@@ -1,0 +1,27 @@
+
+	<!DOCTYPE HTML> 
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<title>Mum Schedule</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+		<body>
+		<h3><a href="/schedule/list">Schedule List</a></h3><br/>
+		<h2>Schedule >><span>create</span></h2> <br/>
+				<div>
+				<form action="#" th:action="@{/schedule/create}" th:object="${newEntry}" method="post">
+		 			<!-- <select name="cars" th:each="smokeTest : ${message}>
+		   				 <option value="${message}" th:text="${message}"></option>
+		 			 </select> -->
+		 			  <select name="cars">
+		 			     <option value="volvo">Volvo</option>
+		    			     <option value="saab">Saab</option>
+		   				 <option value="fiat">Fiat</option>
+		   				 <option value="audi">Audi</option>
+		   			 </select> 
+		  			 <br/><br/>
+		  						<input type="submit" value="CreateSchedule"/>
+				</form>	
+	         </div>
+		</body>
+	</html>

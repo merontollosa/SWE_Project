@@ -23,9 +23,10 @@ public class Entry {
 	private String entryMonth;
 	private int numOfFpp;
 	private int numOfMpp;
+	private int numOfFppOpt;
+	private int numOfMppOpt;
 	private int numOfUSstudents;
-	
-	
+
 	@OneToMany(mappedBy = "entry", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Block> blocks;
 	
@@ -78,14 +79,20 @@ public class Entry {
 		this.numOfUSstudents = numOfUSstudents;
 	}
 
-	/*public List<Block> getBlocks() {
-		return blocks;
+	public int getNumOfFppOpt() {
+		return numOfFppOpt;
 	}
 
-	public void setBlocks(List<Block> blocks) {
-		this.blocks = blocks;
+	public void setNumOfFppOpt(int numOfFppOpt) {
+		this.numOfFppOpt = numOfFppOpt;
 	}
-*/	
-	
+
+	public int getNumOfMppOpt() {
+		return numOfMppOpt;
+	}
+
+	public void setNumOfMppOpt(int numOfMppOpt) {
+		this.numOfMppOpt = numOfMppOpt;
+	}
 	
 }

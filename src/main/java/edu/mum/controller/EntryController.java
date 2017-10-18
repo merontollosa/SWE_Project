@@ -21,10 +21,15 @@ public class EntryController {
 	@Autowired
 	private EntryService entryService;
 	
+	@RequestMapping("/addEntry")
+	public String saveEntry(){
+		return "addEntry";
+	}
+	
 	@RequestMapping(value= {"/addEntry"},method=RequestMethod.POST)
 	public RedirectView saveEntry(@ModelAttribute("entry") Entry newEntry){
 		entryService.saveEntry(newEntry);
-		return new RedirectView("/");
+		return new RedirectView("/addEntry");
 	}
 	
 	@RequestMapping(value= {"/deleteEntry"},method=RequestMethod.POST)

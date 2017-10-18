@@ -10,14 +10,19 @@ public class Specialization {
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String specalization;
-
-	public String getSpecalization() {
-		return specalization;
+	private String specialization;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getSpecialization() {
+		return specialization;
+	}
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
 	}
 
-	public void setSpecalization(String specalization) {
-		this.specalization = specalization;
-	}
-
+	
 }

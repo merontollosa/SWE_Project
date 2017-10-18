@@ -1,11 +1,13 @@
 package edu.mum.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Schedule {
@@ -14,8 +16,10 @@ public class Schedule {
  	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	  private Long Id;
+ 	  @OneToOne
+ 	  @JoinColumn (name="entry_id")
 	  private Entry entry;
-	  private LocalDate generatedDate;
+	  private Date generatedDate;
 	  private String status;
 	public Long getId() {
 		return Id;
@@ -29,10 +33,10 @@ public class Schedule {
 	public void setEntry(Entry entry) {
 		this.entry = entry;
 	}
-	public LocalDate getGeneratedDate() {
+	public Date getGeneratedDate() {
 		return generatedDate;
 	}
-	public void setGeneratedDate(LocalDate generatedDate) {
+	public void setGeneratedDate(Date generatedDate) {
 		this.generatedDate = generatedDate;
 	}
 	public String getStatus() {

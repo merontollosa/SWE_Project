@@ -6,11 +6,11 @@ public class ScheduleSectionCreator {
 
 	public void createSectionForBlock(Block block) {
 		switch (block.getBlockMonth()) {
-		case "A":  firstBlock(block);
+		case "A":  zeroBlock(block);
 		break;
-		case "B":  secondBlock(block);
+		case "B":  firstBlock(block);
 		break;
-		case "C":  thirdBlock(block);
+		case "C":  secondBlock(block);
 		break;
 		default: otherBlocks(block);
 		}
@@ -24,7 +24,7 @@ public class ScheduleSectionCreator {
 //		}
 	}
 
-	private void thirdBlock(Block block) {
+	private void secondBlock(Block block) {
 		int noFPP = block.getEntry().getNumOfFpp();
 		for(int i=0;  i<Math.round(noFPP/25.0); i++) {
 			//block.getSections.add(new Section(block.getId(), MPP));
@@ -35,7 +35,7 @@ public class ScheduleSectionCreator {
 		}
 	}
 
-	private void secondBlock(Block block) {
+	private void firstBlock(Block block) {
 		int noFPP = block.getEntry().getNumOfFpp();
 		for(int i=0;  i<Math.round(noFPP/25.0); i++) {
 			//block.getSections.add(new Section(block.getId(), FPP));
@@ -46,7 +46,7 @@ public class ScheduleSectionCreator {
 		}
 	}
 
-	private void firstBlock(Block block) {
+	private void zeroBlock(Block block) {
 		//block.getSections().add((new Section(block.getId(),SCI));
 	}
 }

@@ -18,8 +18,9 @@ public class ScheduleController {
 
 	// inject via application.properties
 	@Autowired
-	EntryService entryService;
 	ScheduleService scheduleService;
+	@Autowired
+	EntryService entryService;
 	
 	@RequestMapping("/schedule/list")
 	public String scheduleList(Map<String, Object> model) {
